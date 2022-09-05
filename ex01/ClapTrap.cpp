@@ -42,6 +42,36 @@ void ClapTrap::setName (std::string name)
 	this->name = name;
 };
 
+int ClapTrap::getHitpoints ()
+{
+	return (this->hitPoints);
+};
+
+void ClapTrap::setHitpoints (unsigned int amount)
+{
+	this->hitPoints = amount;
+};
+
+int ClapTrap::getEnergyPoints ()
+{
+	return (this->energyPoints);
+};
+
+void ClapTrap::setEnergyPoints (unsigned int amount)
+{
+	this->energyPoints = amount;
+};
+
+int ClapTrap::getAttackDamage ()
+{
+	return (this->attackDamage);
+};
+
+void ClapTrap::setAttackDamage (unsigned int amount)
+{
+	this->attackDamage = amount;
+};
+
 void ClapTrap::attack (const std::string& target)
 {
 	std::cout << "Claptrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
