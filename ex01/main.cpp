@@ -1,18 +1,24 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap barry("Barry");
-	ClapTrap venkman;
+	ScavTrap scav("Venkman");
+	ScavTrap scavB(scav);
+	ScavTrap defaultScav;
 
-
-
-	barry.attack(venkman.getName());
-	venkman.beRepaired(0);
-	venkman.attack(barry.getName());
-	barry.beRepaired(0);
-	std::cout << "Barry's hitpoints: " << barry.getHitpoints() << std::endl;
-	std::cout << "Venkman's hitpoints: " << venkman.getHitpoints() << std::endl;
+	std::cout << "Scav is named: " << scav.getName() << std::endl;
+	std::cout << "ScavB is named: " << scavB.getName() << std::endl;
+	std::cout << "defaultScav is named " << defaultScav.getName() << ", what a loser" << std::endl;
+	std::cout << "scav has " << scav.getHitpoints() << "hitpoints" << std::endl;
+	std::cout << "scavB has " << scavB.getHitpoints() << "hitpoints" << std::endl;
+	std::cout << defaultScav.getName() << " has " << defaultScav.getHitpoints() << "hitpoints" << std::endl;
+	scav.attack(defaultScav.getName());
+	defaultScav.takeDamage(scav.getAttackDamage());
+	std::cout << defaultScav.getName() << " has " << defaultScav.getHitpoints() << " hitpoints left" << std::endl;
+	defaultScav.beRepaired(20);
+	std::cout << defaultScav.getName() << " has " << defaultScav.getHitpoints() << " hitpoints left and " << defaultScav.getEnergyPoints() << " energy points left" << std::endl;
+	std::cout << scav.getName() << " has " << scav.getEnergyPoints() << " energy points left" << std::endl;
 
 	return (0);
 }
