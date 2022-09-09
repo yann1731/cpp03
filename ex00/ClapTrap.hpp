@@ -8,13 +8,14 @@ class ClapTrap
 	ClapTrap ();
 	ClapTrap (std::string name);
 	ClapTrap (const ClapTrap& claptrap);
+	ClapTrap& operator= (const ClapTrap& clap);
 	~ClapTrap ();
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	std::string getName(void);
+	std::string getName(void) const;
 	void setName(std::string name);
-	int getHitpoints (void);
+	int getHitpoints (void) const;
 
 	private:
 	std::string name;

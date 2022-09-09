@@ -32,7 +32,17 @@ ClapTrap::~ClapTrap ()
 	std::cout << "default destructor called" << std::endl;
 };
 
-std::string ClapTrap::getName ()
+ClapTrap& ClapTrap::operator= (const ClapTrap& clap)
+{
+	ClapTrap newClap;
+	newClap.name = clap.name;
+	newClap.hitPoints = clap.hitPoints;
+	newClap.energyPoints = clap.energyPoints;
+	newClap.attackDamage = clap.attackDamage;
+	return (newClap);
+};
+
+std::string ClapTrap::getName () const
 {
 	return (this->name);
 };
@@ -60,7 +70,7 @@ void ClapTrap::beRepaired (unsigned int amount)
 	this->hitPoints += amount;
 };
 
-int ClapTrap::getHitpoints ()
+int ClapTrap::getHitpoints () const
 {
 	return (this->hitPoints);
 };

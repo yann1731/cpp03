@@ -26,6 +26,17 @@ FragTrap::FragTrap (FragTrap& frag)
 	this->setAttackDamage(frag.getAttackDamage());
 };
 
+FragTrap& FragTrap::operator= (const FragTrap& frag)
+{
+	FragTrap newFrag;
+
+	newFrag.setName(frag.getName());
+	newFrag.setHitpoints(frag.getHitpoints());
+	newFrag.setEnergyPoints(frag.getEnergyPoints());
+	newFrag.setAttackDamage(frag.getAttackDamage());
+	return (newFrag);
+};
+
 FragTrap::~FragTrap ()
 {
 	std::cout << "Fragtrap default destructor called" << std::endl;

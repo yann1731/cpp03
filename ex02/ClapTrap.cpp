@@ -27,12 +27,22 @@ ClapTrap::ClapTrap (const ClapTrap& clap)
 	this->attackDamage = clap.attackDamage;
 };
 
+ClapTrap& ClapTrap::operator= (const ClapTrap& clap)
+{
+	ClapTrap newClap;
+	newClap.name = clap.name;
+	newClap.hitPoints = clap.hitPoints;
+	newClap.energyPoints = clap.energyPoints;
+	newClap.attackDamage = clap.attackDamage;
+	return (newClap);
+};
+
 ClapTrap::~ClapTrap ()
 {
 	std::cout << "ClapTrap default destructor called" << std::endl;
 };
 
-std::string ClapTrap::getName ()
+std::string ClapTrap::getName () const
 {
 	return (this->name);
 };
@@ -42,7 +52,7 @@ void ClapTrap::setName (std::string name)
 	this->name = name;
 };
 
-int ClapTrap::getHitpoints ()
+int ClapTrap::getHitpoints () const
 {
 	return (this->hitPoints);
 };
@@ -52,7 +62,7 @@ void ClapTrap::setHitpoints (unsigned int amount)
 	this->hitPoints = amount;
 };
 
-int ClapTrap::getEnergyPoints ()
+int ClapTrap::getEnergyPoints () const
 {
 	return (this->energyPoints);
 };
@@ -62,7 +72,7 @@ void ClapTrap::setEnergyPoints (unsigned int amount)
 	this->energyPoints = amount;
 };
 
-int ClapTrap::getAttackDamage ()
+int ClapTrap::getAttackDamage () const
 {
 	return (this->attackDamage);
 };

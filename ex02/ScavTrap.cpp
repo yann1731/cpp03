@@ -26,6 +26,17 @@ ScavTrap::ScavTrap(ScavTrap &scav)
 	this->setAttackDamage(scav.getAttackDamage());
 };
 
+ScavTrap& ScavTrap::operator= (const ScavTrap& scav)
+{
+	ScavTrap newScav;
+
+	newScav.setName(scav.getName());
+	newScav.setHitpoints(scav.getHitpoints());
+	newScav.setEnergyPoints(scav.getEnergyPoints());
+	newScav.setAttackDamage(scav.getAttackDamage());
+	return (newScav);
+};
+
 ScavTrap::~ScavTrap ()
 {
 	std::cout << "ScavTrap default destructor called" << std::endl;

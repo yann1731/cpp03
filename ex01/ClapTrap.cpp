@@ -27,6 +27,16 @@ ClapTrap::ClapTrap (const ClapTrap& clap)
 	this->attackDamage = clap.attackDamage;
 };
 
+ClapTrap& ClapTrap::operator= (const ClapTrap& clap)
+{
+	ClapTrap newClap;
+	newClap.name = clap.name;
+	newClap.hitPoints = clap.hitPoints;
+	newClap.energyPoints = clap.energyPoints;
+	newClap.attackDamage = clap.attackDamage;
+	return (newClap);
+};
+
 ClapTrap::~ClapTrap ()
 {
 	std::cout << "ClapTrap default destructor called" << std::endl;
