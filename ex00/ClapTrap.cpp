@@ -32,7 +32,7 @@ ClapTrap::~ClapTrap ()
 	std::cout << "default destructor called" << std::endl;
 };
 
-ClapTrap& ClapTrap::operator= (const ClapTrap& clap)
+ClapTrap ClapTrap::operator= (const ClapTrap& clap)
 {
 	ClapTrap newClap;
 	newClap.name = clap.name;
