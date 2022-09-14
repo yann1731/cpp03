@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(ScavTrap &scav)
 	this->setAttackDamage(scav.getAttackDamage());
 };
 
-ScavTrap& ScavTrap::operator= (ScavTrap scav)
+ScavTrap ScavTrap::operator= (ScavTrap scav)
 {
 	ScavTrap newScav;
 	newScav.setName(scav.getName());

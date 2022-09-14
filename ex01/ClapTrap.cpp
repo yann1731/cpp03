@@ -27,7 +27,7 @@ ClapTrap::ClapTrap (const ClapTrap& clap)
 	this->attackDamage = clap.attackDamage;
 };
 
-ClapTrap& ClapTrap::operator= (const ClapTrap& clap)
+ClapTrap ClapTrap::operator= (const ClapTrap& clap)
 {
 	ClapTrap newClap;
 	newClap.name = clap.name;
