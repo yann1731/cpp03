@@ -26,7 +26,7 @@ FragTrap::FragTrap (FragTrap& frag)
 	this->setAttackDamage(frag.getAttackDamage());
 };
 
-FragTrap& FragTrap::operator= (const FragTrap& frag)
+FragTrap FragTrap::operator= (const FragTrap& frag)
 {
 	FragTrap newFrag;
 

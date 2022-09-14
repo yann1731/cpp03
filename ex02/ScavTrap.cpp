@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(ScavTrap &scav)
 	this->setAttackDamage(scav.getAttackDamage());
 };
 
-ScavTrap& ScavTrap::operator= (const ScavTrap& scav)
+ScavTrap ScavTrap::operator= (const ScavTrap& scav)
 {
 	ScavTrap newScav;
 
